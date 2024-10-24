@@ -16,12 +16,12 @@
 	});
 </script>
 
-<div class="font-semibold text-center text-lg">
+<div class="text-center text-lg">
 	<div class="flex align-center items-center absolute top-0 py-3 w-full">
 		<div class="flex-none">
 			<Comm status={comm} />
 		</div>
-		<div class="grow">KIOSK 01</div>
+		<div class="grow font-semibold">KIOSK 01</div>
 		<div class="flex-none">
 			<Clock />
 		</div>
@@ -34,6 +34,8 @@
 	</div>
 
 	<div class="absolute bottom-0 flex justify-center items-center py-3 w-full">
-		<span>© {new Date().getFullYear()} Sotefin SA. Made with ❤️ in Switzerland.</span>
+		<span class="font-medium"
+			>© {new Date().getFullYear()} Sotefin SA. Made with ❤️ in Switzerland.</span
+		>
 	</div>
 </div>
