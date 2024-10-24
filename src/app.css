@@ -1,0 +1,9 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+	background-color: rgb(226 232 240);
+	background-image: linear-gradient(to bottom right, #7f8c8d, #d5dbdb);
+	/* font-family: 'Roboto', sans-serif; */
+}
