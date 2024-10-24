@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { onMount } from 'svelte';
+	import { setContext } from 'svelte';
 	import { PUBLIC_WS } from '$env/static/public';
 	import Clock from '$lib/Clock.svelte';
 	import Comm from '$lib/Comm.svelte';
@@ -14,6 +15,7 @@
 			const m = JSON.parse(e.data);
 			comm = m['comm'];
 			page = m['page'];
+			setContext('page', page);
 		};
 	});
 </script>
