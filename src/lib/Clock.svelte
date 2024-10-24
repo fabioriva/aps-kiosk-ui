@@ -15,7 +15,7 @@
 </script>
 
 <div class="clockWrapper mx-3">
-	<p class="clockDisplay font-bold">
+	<p class="clockDisplay font-semibold">
 		{hour <= 12 ? hour : hour - 12}:{min}:{sec}
 		{dayOrNight}
 	</p>

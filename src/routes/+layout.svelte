@@ -7,21 +7,23 @@
 
 	let { children } = $props();
 	let comm = $state(false);
+	let page = $state(0);
 	onMount(() => {
 		const ws = new WebSocket(PUBLIC_WS + '/info');
 		ws.onmessage = (e) => {
 			const m = JSON.parse(e.data);
 			comm = m['comm'];
+			page = m['page'];
 		};
 	});
 </script>
 
-<div class="text-center text-lg">
+<div class="text-center text-xl">
 	<div class="flex align-center items-center absolute top-0 py-3 w-full">
 		<div class="flex-none">
 			<Comm status={comm} />
 		</div>
-		<div class="grow font-semibold">KIOSK 01</div>
+		<div class="grow font-semibold">KIOSK 01 P{page}</div>
 		<div class="flex-none">
 			<Clock />
 		</div>
