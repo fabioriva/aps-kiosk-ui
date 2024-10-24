@@ -8,14 +8,14 @@
 
 	let { children } = $props();
 	let comm = $state(false);
-	let page = $state(0);
+	let page = $state({ nr: 0 });
+	setContext('page', page);
 	onMount(() => {
 		const ws = new WebSocket(PUBLIC_WS + '/info');
 		ws.onmessage = (e) => {
 			const m = JSON.parse(e.data);
 			comm = m['comm'];
-			page = m['page'];
-			setContext('page', page);
+			page.nr = m['page'];
 		};
 	});
 </script>
@@ -25,7 +25,7 @@
 		<div class="flex-none">
 			<Comm status={comm} />
 		</div>
-		<div class="grow font-semibold">KIOSK 01 P{page}</div>
+		<div class="grow font-semibold">KIOSK 01 P{page.nr}</div>
 		<div class="flex-none">
 			<Clock />
 		</div>
