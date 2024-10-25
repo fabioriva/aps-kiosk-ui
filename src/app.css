@@ -4,6 +4,7 @@
 
 body {
 	background-color: rgb(226 232 240);
-	background-image: linear-gradient(to bottom right, #7f8c8d, #d5dbdb);
+	background-color: rgb(148 163 184);
+	background-image: linear-gradient(to bottom right, rgb(100 116 139), rgb(241 245 249));
 	/* font-family: 'Roboto', sans-serif; */
 }

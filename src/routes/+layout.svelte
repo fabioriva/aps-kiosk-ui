@@ -5,6 +5,8 @@
 	import { PUBLIC_WS } from '$env/static/public';
 	import Clock from '$lib/Clock.svelte';
 	import Comm from '$lib/Comm.svelte';
+	import Footer from '$lib/Footer.svelte';
+	import Video from '$lib/Video.svelte';
 
 	let { children } = $props();
 	let comm = $state(false);
@@ -20,7 +22,7 @@
 	});
 </script>
 
-<div class="text-center text-xl">
+<div class="text-center text-xl p-0">
 	<div class="flex align-center items-center absolute top-0 py-3 w-full">
 		<div class="flex-none">
 			<Comm status={comm} />
@@ -31,30 +33,13 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col h-screen">
-		<div class="m-auto bg-opacity-0 px-1">
-			{@render children()}
-		</div>
+	<div class="mt-0">
+		<Video />
 	</div>
 
-	<div class="absolute bottom-0 flex justify-center items-center py-3 w-full">
-		<span class="font-medium"
-			>© {new Date().getFullYear()} Sotefin SA. Made with
-			<span class="inline-block"
-				><svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="16"
-					height="16"
-					fill="rgb(239 68 68)"
-					class="bi bi-heart-fill"
-					viewBox="0 0 16 16"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
-					/>
-				</svg></span
-			> in Switzerland.</span
-		>
+	<div class="h-screen m-auto bg-opacity-0">
+		{@render children()}
 	</div>
+
+	<div class="absolute bottom-0 border-t border-zinc-200 w-full"><Footer /></div>
 </div>
