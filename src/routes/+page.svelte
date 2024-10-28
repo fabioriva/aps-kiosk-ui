@@ -30,7 +30,7 @@
 			<Alert message="Press & hold button to close" role="warning" title="Action required" />
 			<button class="bg-yellow-700 p-16" ontouchend={release} ontouchstart={press}>Press me</button>
 		{:else if page.nr == 3}
-			<Alert message="Enter PIN code" role="warning" title="Action required" />
+			<!-- <Alert message="Enter PIN code" role="warning" title="Action required" /> -->
 			<Keypad />
 		{:else}
 			<div>page {page.nr}</div>
