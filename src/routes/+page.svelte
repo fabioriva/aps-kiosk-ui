@@ -2,7 +2,9 @@
 	import { getContext } from 'svelte';
 	import Alert from '$lib/Alert.svelte';
 	import Close from '$lib/Close.svelte';
+	import Error from '$lib/Error.svelte';
 	import Keypad from '$lib/Keypad.svelte';
+	import Success from '$lib/Success.svelte';
 	const page = getContext('page');
 	$inspect(page);
 </script>
@@ -30,6 +32,10 @@
 		{:else if page.nr == 3}
 			<!-- <Alert message="Enter PIN code" role="warning" title="Action required" /> -->
 			<Keypad />
+		{:else if page.nr == 4}
+			<Success message="Success message" />
+		{:else if page.nr == 5}
+			<Error message="Error message" />
 		{:else}
 			<div>page {page.nr}</div>
 		{/if}

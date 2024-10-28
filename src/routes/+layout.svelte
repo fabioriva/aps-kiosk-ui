@@ -11,13 +11,17 @@
 	let { children } = $props();
 	let comm = $state(false);
 	let page = $state({ nr: 0 });
+	let mesg = $state({ nr: 0 });
 	setContext('page', page);
+	setContext('mesg', mesg);
 	onMount(() => {
 		const ws = new WebSocket(PUBLIC_WS + '/info');
 		ws.onmessage = (e) => {
 			const m = JSON.parse(e.data);
+			// console.log(m);
 			comm = m['comm'];
 			page.nr = m['page'];
+			mesg.nr = m['successMesg'];
 		};
 	});
 </script>
