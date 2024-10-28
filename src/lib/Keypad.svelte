@@ -1,10 +1,11 @@
 <script>
+	import { PUBLIC_API } from '$env/static/public';
 	import Key from '$lib/Key.svelte';
 	let pin = $state('');
 	const handlePress = async (e) => {
 		pin += e.detail.key;
 		if (pin.length >= 3) {
-			const url = `/api/pin?pin=${pin}`;
+			const url = PUBLIC_API + `/pin?pin=${pin}`;
 			pin = '';
 			// const res = await fetch(url);
 			// const json = await res.json();
