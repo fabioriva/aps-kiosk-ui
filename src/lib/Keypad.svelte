@@ -9,6 +9,7 @@
 			// const res = await fetch(url);
 			// const json = await res.json();
 			// console.log(json);
+			await fetch(url).json();
 		}
 	};
 </script>
