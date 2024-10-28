@@ -7,7 +7,9 @@
 </script>
 
 <button
-	class="{Number(key) ? 'text-slate-700 border-slate-500' : 'text-blue-700 border-blue-700'}
-    text-6xl h-24 w-24 border-2 rounded-lg active:bg-yellow-500"
-	ontouchstart={press(key)}>{key}</button
+	class="{!isNaN(key)
+		? 'text-gray-700 border-gray-800 active:bg-gray-500'
+		: 'text-blue-700 border-blue-700 active:bg-blue-500'}
+    h-24 w-24 align-middle font-medium text-6xl border-2 rounded-lg"
+	ontouchstart={() => press(key)}>{key}</button
 >

@@ -33,10 +33,7 @@
 		</div>
 	</div>
 
-	<div class="mt-0">
-		<Video />
-	</div>
-
+	<Video />
 	<div class="h-screen m-auto bg-opacity-0">
 		{@render children()}
 	</div>
