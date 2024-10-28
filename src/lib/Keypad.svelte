@@ -15,12 +15,12 @@
 	};
 </script>
 
-<div class="space-y-8 text-4xl">
-	<Alert
-		message={pin ? pin.replace(/\d(?!$)/g, '•') : 'Enter PIN code'}
-		role="warning"
-		title="Action required"
-	/>
+<Alert
+	message={pin ? pin.replace(/\d(?!$)/g, '•') : 'Enter PIN code'}
+	role="warning"
+	title="Action required"
+/>
+<div class="mt-16">
 	<!-- <h1>{pin ? pin.replace(/\d(?!$)/g, '•') : 'Enter PIN'}</h1> -->
 	<div class="grid grid-cols-4 gap-2 align-center justify-items-center mx-auto w-[410px]">
 		<Key key={'1'} on:press={handlePress} />

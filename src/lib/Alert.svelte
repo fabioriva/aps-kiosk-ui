@@ -8,7 +8,7 @@
 			case 'error':
 				return 'bg-red-100 border-red-700 text-red-700';
 			case 'info':
-				return 'bg-blue-100 border-blue-700 text-blue-700';
+				return 'bg-sky-100 border-sky-700 text-sky-700';
 			case 'success':
 				return 'bg-green-100 border-green-700 text-green-700';
 			case 'warning':
