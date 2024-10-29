@@ -2,8 +2,6 @@
 	let { message, role, title } = $props();
 	function setColor(role) {
 		switch (role) {
-			case 'alert':
-				return 'bg-red-100 border-red-700 text-red-700';
 			case 'error':
 				return 'bg-red-100 border-red-700 text-red-700';
 			case 'info':
