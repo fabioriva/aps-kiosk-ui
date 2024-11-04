@@ -15,7 +15,7 @@
 	setContext('page', page);
 	setContext('mesg', mesg);
 	onMount(() => {
-		const ws = new WebSocket(PUBLIC_WS + '/info');
+		const ws = new WebSocket(PUBLIC_WS); // + '/info');
 		ws.onmessage = (e) => {
 			const m = JSON.parse(e.data);
 			// console.log(m);
