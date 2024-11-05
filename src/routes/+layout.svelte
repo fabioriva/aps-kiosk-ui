@@ -5,6 +5,7 @@
 	import { PUBLIC_WS } from '$env/static/public';
 	import Clock from '$lib/Clock.svelte';
 	import Comm from '$lib/Comm.svelte';
+	import Error from '$lib/Error.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Video from '$lib/Video.svelte';
 
@@ -38,8 +39,12 @@
 	</div>
 
 	<Video />
-	<div class="h-screen m-auto bg-opacity-0">
-		{@render children()}
+	<div class="h-screen m-auto bg-opacity-0 font-medium mx-8 mt-16">
+		{#if comm}
+			{@render children()}
+		{:else}
+			<Error message="KIOSK Offline" />
+		{/if}
 	</div>
 
 	<div class="absolute bottom-0 border-t border-zinc-200 w-full"><Footer /></div>
