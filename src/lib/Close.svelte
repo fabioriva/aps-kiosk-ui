@@ -13,11 +13,13 @@
 	let isPressed = $state(false);
 	const push = async () => {
 		isPressed = true;
-		await fetch('/api/push');
+		// await fetch('/api/push');
+		await fetch('/api/close/1')
 	};
 	const release = async () => {
 		isPressed = false;
-		await fetch('/api/release');
+		// await fetch('/api/release');
+		await fetch('/api/close/0')
 	};
 </script>
 
@@ -26,7 +28,6 @@
 	<button
 		class={`w-[256px] h-[256px] rounded-full bg-yellow-500 border-4 border-yellow-600 opacity-100 shadow-2xl shadow-slate-700 font-bold text-2xl text-amber-700 uppercase ${isPressed && 'bg-gradient-to-br from-amber-500 to-amber-600 text-amber-600'}`}
 		ontouchend={release}
-		onclick={push}
 		ontouchstart={push}>hold to close</button
 	>
 </div>
