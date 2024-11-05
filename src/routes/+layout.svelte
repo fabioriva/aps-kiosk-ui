@@ -10,7 +10,7 @@
 	import Video from '$lib/Video.svelte';
 
 	let { children } = $props();
-	let comm = $state(false);
+	let comm = $state(true);
 	let page = $state({ nr: 0 });
 	let mesg = $state({ nr: 0 });
 	setContext('page', page);
