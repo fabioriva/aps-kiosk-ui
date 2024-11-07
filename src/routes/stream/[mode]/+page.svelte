@@ -16,7 +16,7 @@
 		frameborder="0"
 		class="w-full pointer-events-auto -z-50"
 	></iframe>
-	<button id="button" class="z-50" onclick={() => goto('/')}>Back</button>
+	<button id="button" class="z-50" onclick={() => goto('/faceid')}>Back</button>
 </div>
 
 <style>
