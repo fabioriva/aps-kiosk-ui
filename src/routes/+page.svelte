@@ -1,6 +1,6 @@
 <script>
 	import { getContext } from 'svelte';
-	import { goto } from '$app/navigation';
+	// import { goto } from '$app/navigation';
 	import Alert from '$lib/Alert.svelte';
 	import Close from '$lib/Close.svelte';
 	import Error from '$lib/Error.svelte';
@@ -18,8 +18,9 @@
 	{#if comm.status}
 		{#if page.nr === 1}
 			<Alert message="Swipe tag to start" role="info" title="Action required" />
+			<!-- <button class="mt-16 text-4xl" onclick={() => goto('/faceid')}>Face ID</button> -->
 			<!-- <img src="arrow-down.png" alt="arrow-down" class="mx-auto mt-32" width="256" height="256" /> -->
-			<button class="mt-16 text-4xl" onclick={() => goto('/faceid')}>Face ID</button>
+			<a class="block mt-16 text-4xl" href="/faceid">Face ID</a>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="256"
