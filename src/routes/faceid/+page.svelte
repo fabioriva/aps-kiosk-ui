@@ -1,7 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
-	function navigateToStream(mode) {
-		goto('/stream' + mode);
+	function navigateToStream(mode, query = '') {
+		print('/stream' + mode + query);
+		goto('/stream' + mode + query);
 	}
 </script>
 
@@ -9,7 +10,7 @@
 	<div class="flex flex-col space-y-16">
 		<button
 			class="bg-sky-700 hover:bg-sky-900 text-white text-4xl font-semibold py-6 px-12 rounded-lg"
-			onclick={() => navigateToStream('/capture')}>Face capture</button
+			onclick={() => navigateToStream('/capture', '?name=Fabio&surname=Riva')}>Face capture</button
 		>
 		<button
 			class="bg-sky-700 hover:bg-sky-900 text-white text-4xl font-semibold py-6 px-12 rounded-lg"
