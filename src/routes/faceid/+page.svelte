@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	function navigateToStream(mode, query = '') {
-		print('/stream' + mode + query);
+		console.log('/stream' + mode + query);
 		goto('/stream' + mode + query);
 	}
 </script>
