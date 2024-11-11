@@ -1,12 +1,24 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { PUBLIC_CAMERA_SRC } from '$env/static/public';
-	let { data } = $props();
+	// let { data } = $props();
+	// console.log(data);
+	// console.log(document.location);
+	// console.log(document.location.pathname);
+	// console.log(document.location.pathname.split('/').pop());
+	const mode = document.location.pathname.split('/').pop();
+	const queryString = document.location.search; // Returns:'?q=123'
+	// console.log(PUBLIC_CAMERA_SRC + '/face/' + mode + queryString);
+	// Further parsing:
+	// const params = new URLSearchParams(queryString);
+	// const n = params.get('name'); // is the number 123
+	// const s = params.get('surname'); // is the number 123
+	// console.log(n, s);
 </script>
 
 <div class="flex items-center justify-center h-screen">
 	<iframe
-		src={PUBLIC_CAMERA_SRC + '/face/' + data.mode}
+		src={PUBLIC_CAMERA_SRC + '/face/' + mode + queryString}
 		title="picamera video streaming"
 		width="800"
 		height="1280"
