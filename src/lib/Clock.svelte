@@ -1,16 +1,23 @@
 <script>
 	import { onMount } from 'svelte';
-	let date = new Date();
-	let hour = $state(date.getHours());
-	let min = $state(date.getMinutes());
-	let sec = $state(date.getSeconds());
+	
 	let dayOrNight = $state('AM');
+	let time = $state(new Date());
+	// these automatically update when `time`
+	// changes, because of the `$:` prefix
+	let hour = $derived(time.getHours());
+	let min = $derived(time.getMinutes());
+	let sec = $derived(time.getSeconds());
 
 	onMount(() => {
 		const interval = setInterval(() => {
-			date = new Date();
+			time = new Date();
 			dayOrNight = hour >= 12 ? 'PM' : 'AM';
 		}, 1000);
+
+		return () => {
+			clearInterval(interval);
+		};
 	});
 </script>
 

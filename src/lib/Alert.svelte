@@ -19,5 +19,5 @@
 
 <div class="{setColor(role)} border-t-4 rounded-b px-4 py-3 shadow-md" role="alert">
 	<p class="font-bold text-xl">{title}</p>
-	<p class="py-4 text-5xl uppercase">{message}</p>
+	<p class="leading-tight py-4 text-4xl uppercase">{message}</p>
 </div>
